@@ -81,7 +81,8 @@ public class EnemyController : MonoBehaviour
         _animator.SetBool("isWalking", false);
 
         // Let's shoot
-        //_animator.SetTrigger("isShooting");
+        _animator.SetTrigger("isShooting");
+        
 
         // And let's wait for a moment
         Debug.Log("Waiting for " + waitingTime + " seconds");
