@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class TestingRaycast2D : MonoBehaviour
+public class TestingRaycast2D : TBehaviour
 {
     [SerializeField] protected Animator animator;
     [SerializeField] protected Weapon weapon;
 
-    private void Awake()
+    protected override void LoadComponents()
     {
+        base.LoadComponents();
         if (animator == null)
         {
             animator = GetComponent<Animator>();
@@ -17,8 +18,10 @@ public class TestingRaycast2D : MonoBehaviour
         }
     }
 
-    private void Start()
+    protected override void Start()
     {
+        
+        base.Start();
         animator.SetBool("isWalking", false);
     }
 
@@ -27,13 +30,15 @@ public class TestingRaycast2D : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // Left mouse button clicked
         {
             animator.SetTrigger("isShooting");
-            weapon.Shoot();
         }
     }
 
     public virtual void CanShoot()
     {
-        // This method can be expanded to include logic that determines if the character can shoot
+        if (weapon != null)
+        {
+            StartCoroutine(weapon.ShootWithRaycast());
+        }
     }
 }
 
