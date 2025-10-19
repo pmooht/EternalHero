@@ -8,14 +8,21 @@ public class TestingRaycast2D : TBehaviour
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        if (animator == null)
-        {
-            animator = GetComponent<Animator>();
-        }
-        if (weapon == null)
-        {
-            weapon = GetComponentInChildren<Weapon>();
-        }
+        this.LoadAnimator();
+        this.LoadWeapon();
+    }
+
+    protected virtual void LoadAnimator()
+    {
+        if (animator == null) return;
+        this.animator = GetComponent<Animator>();
+        Debug.Log(transform.name + ": LoadAnimator", gameObject);
+    }
+    protected virtual void LoadWeapon()
+    {
+        if (weapon == null) return;
+        this.weapon = GetComponentInChildren<Weapon>();
+        Debug.Log(transform.name + ": LoadWeapon", gameObject);
     }
 
     protected override void Start()

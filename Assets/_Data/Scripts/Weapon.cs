@@ -54,8 +54,14 @@ public class Weapon : MonoBehaviour
             lineRenderer.enabled = true;
 
             yield return null;
-
+            //Line renderer visible for 2 second
+            yield return new WaitForSeconds(0.2f);
             lineRenderer.enabled = false;
+
+
+
+
+
 
         }
     }

@@ -78,9 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7fced23f079f045874b5d8106cb7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4819571240318894549, guid: 9270a3262315eb748a7aabc97c069f8c, type: 3}
-  Shooter: {fileID: 3526988894352266490}
+  projectilePrefab: {fileID: 0}
+  Shooter: {fileID: 0}
   projectileSpawnPoint: {fileID: 0}
+  explosionEffect: {fileID: 0}
+  lineRenderer: {fileID: 0}
 --- !u!1 &4599075776138711765
 GameObject:
   m_ObjectHideFlags: 0
